@@ -18,4 +18,8 @@ export class ProfileService {
      return this._http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret )
      .subscribe(response => console.log(response));
    }
+   getProfileRepos(){
+    return this._http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret )
+    .subscribe(response => console.log(response));
+  }
 }
