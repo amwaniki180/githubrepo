@@ -1,4 +1,9 @@
+import { ProfileService } from './../../services/profile.service';
 import { Component, OnInit } from '@angular/core';
+// iport{map} from 'rxjs/Operator'
+import {HttpClient} from '@angular/common/http'
+
+
 
 @Component({
   selector: 'gg-profile',
@@ -6,10 +11,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor() { }
+profile : any[];
+  constructor(private profileservive: ProfileService) { 
+    this.profileservive.getProfileInfo().subscribe(profile =>{
+      console.log(profile );
+      this.profile = profile;
+    })
+  }
 
   ngOnInit() {
+   
   }
 
 }

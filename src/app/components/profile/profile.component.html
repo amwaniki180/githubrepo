@@ -1,3 +1,8 @@
-<p>
-  profile works!
-</p>
+<div *ngif="profile">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{profile.name}}<small>{{profile.login}}</small>
+        </div>
+    </div>
+
+</div>
