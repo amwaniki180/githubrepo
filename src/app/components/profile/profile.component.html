@@ -2,7 +2,16 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             {{profile.name}}<small>{{profile.login}}</small>
-            <span *ngif="profile.company">works at{{profile.company}}</span>
+            <span *ngif="profile.company">works at{{profile.company}}</span> {{profile.location}}
+        </div>
+        <div clas="panel-body">
+            <div class="row">
+                <div class=col-sm-3>
+                    <img src="" class="img-circle img-responsive" alt="profile image">
+                </div>
+
+            </div>
+
         </div>
     </div>
 
