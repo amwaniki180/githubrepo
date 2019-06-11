@@ -11,7 +11,10 @@
                 </div>
                 <div class="col-sm-5">
                     <ul class="list-group">
-                        <li class="list-group-item">{{profile.big}}</li>
+                        <li class="list-group-item" *ngif=profile.bi0>{{profile.bi0}}</li>
+                        <li class="list-group-item" *ngif=profile.hireable>{{available for hire}}</li>
+                        <li class="list-group-item" *ngif=profile.blog>{{profile.blog}}</li>
+                        <li class="list-group-item" *ngif=profile.email>{{profile.email}}</li>
                     </ul>
 
                 </div>
