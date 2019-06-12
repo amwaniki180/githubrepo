@@ -13,15 +13,20 @@ import {HttpClient} from '@angular/common/http'
 export class ProfileComponent implements OnInit {
 profile : any[];
 repos : any[];
+username : string;
 
   constructor(private profileservive: ProfileService) { 
-    this.profileservive.getProfileInfo().subscribe(profile =>{
-      console.log(profile );
-      this.profile = profile;
-    });
-    this.profileservive.getProfileRepos().subscribe(this.repos =>{
-      console.log(repos );
-      this.repos = repos;
+  
+    }
+    findProfile(){
+      this.profileservive.updateProfile(this.username);
+      this.profileservive.getProfileInfo().subscribe(profile =>{
+        console.log(profile );
+        this.profile = profile;
+      });
+      this.profileservive.getProfileRepos().subscribe(this.repos =>{
+        console.log(repos );
+        this.repos = repos;
     })
   }
 
