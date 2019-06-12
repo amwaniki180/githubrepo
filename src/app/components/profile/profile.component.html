@@ -1,3 +1,8 @@
+<form action="">
+    <div class="form-group">
+        <input type="text" classs="form-control" placeholder="search">
+    </div>
+</form>
 <div *ngif="profile">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -38,7 +43,8 @@
                                 <p>
                                     {{repo.name}}
                                     <a href="repo.html_url" target="blank" class="btn-sm btn-warning>view this project on github</a>
-                                </p>
+                                     <p>{{repo.description}}</p>
+                                  </p>
                             </div>
 
                         </div>
