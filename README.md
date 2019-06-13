@@ -55,7 +55,7 @@ You are set to go.
 | :--------------------------------------------------- | :------ | :-------------------------- |
 | search                                               | name of user| repositories name       |
 ## Deployment
-Click [here](https:/) to go to the live site.<br>
+Click [here](https://github-site.netlify.com/) to go to the live site.<br>
 ## Built With
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - The language used to program the webpage
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling the HTML
