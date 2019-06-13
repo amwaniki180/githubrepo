@@ -1,58 +1,66 @@
-<form action="" class="search-form">
-    <div class="form-group">
-        <input type="text" classs="form-control" placeholder="search git users with user name">
-    </div>
-</form>
-<div *ngif="profile">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            {{profile.name}}<small>{{profile.login}}</small>
-            <span *ngif="profile.company">works at{{profile.company}}</span> {{profile.location}}
+<div class="container body">
+    <form action="" class="search-form">
+        <div class="form-group">
+            <input type="text" classs="form-control" placeholder="search git users with user name" [(ngModel)]="username" name="username" (keyup)="findProfile()">
         </div>
-        <div clas="panel-body">
-            <div class="row">
-                <div class=col-sm-3>
-                    <img src="" class="img-circle img-responsive" alt="profile image">
+    </form>
+    <div *ngIf="profile" class="details-card">
+        <div>
+            <div class="">
+                <div class="col-md-5 bio bc" ggHighlight>
+                    {{profile.name}}<br><small>{{profile.login}}</small><br>
+                    <span *ngIf="profile.company">works at {{profile.company}}</span><br> {{profile.location}}
                 </div>
-                <div class="col-sm-5">
-                    <ul class="list-group">
-                        <li class="list-group-item" *ngif=profile.bi0>{{profile.bi0}}</li>
-                        <li class="list-group-item" *ngif=profile.hireable>{{available for hire}}</li>
-                        <li class="list-group-item" *ngif=profile.blog>
-                            <a href="{{profile.blog}}" target="blank"></a>{{profile.blog}}</li>
-                        <li class="list-group-item" *ngif=profile.email>
-                            <a href="emailto:{profile.email}}"></a>{{profile.email}}</li>
-                    </ul>
+                <div class="">
+                    <div class="row">
+                        <div class="">
+                            <img src="{{profile.avatar_url}}" class="image" alt="profile image">
+                        </div>
+                        <div class="bio-info">
+                            <ul class="list-group">
+                                <li class="list-group-item">{{profile.bio}}</li>
+                                <li class="list-group-item">
+                                    <a href="{{profile.blog}}" target="blank"></a>{{profile.blog}}</li>
+                                <li class="list-group-item">
+                                    <a href="emailto:{profile.email}}"></a>{{profile.email}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="">
+                            <div class="">
+                                <div>
+                                    <p>
+                                        <span class="btn btn-primary">{{profile.followers}} Followers</span>
+                                        <span class="btn btn-warning">Following {{profile.following}}</span>
+                                        <span class="btn btn-danger">{{profile.public-gists}} public gists</span>
+                                        <span class="btn btn-info">{{profile.public-repos}} public repos</span>
 
-                </div>
-                <div class="col-sm-4">
-                    <div>
-                        <p>
-                            <span class="label label-default">{{profile.followers}} Followers</span>
-                            <span class="label label-primary">Following {{profile.following}}</span>
-                            <span class="label label-success">{{profile.public-gists}} public gists</span>
-                            <span class="label label-info">{{profile.public-repos}} public repos</span>
-
-                        </p>
-                        <p><a href="{{profile.html_url}}" target="blank" class="btn btn-success btn-sm">view profile on github</a></p>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Repos</h3>
+                                    </p>
+                                    <p><a href="{{profile.html_url}}" target="blank" class="btn btn-success btn-sm">view profile on
+                      github</a>
+                                    </p>
+                                    <div class="">
+                                        <div class="">
+                                            <h3 class="repos">Repos</h3>
+                                        </div>
+                                        <div class="d-flex justify-content-center flex-wrap">
+                                            <div class="card" *ngFor="let repo of repos">
+                                                <p class="clearfix">
+                                                    {{repo.name}}
+                                                </p>
+                                                <P>{{repo.description}}</P>
+                                                <button class="btn btn btn-info"><a href="repo.html_url" target="blank" class="">view this project on github</a></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="panel-body" *ngfor="let repos of repo">
-                                <p>
-                                    {{repo.name}}
-                                    <a href="repo.html_url" target="blank" class="btn-sm btn-warning>view this project on github</a>
-                                     <p>{{repo.description}}</p>
-                                  </p>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-
 </div>

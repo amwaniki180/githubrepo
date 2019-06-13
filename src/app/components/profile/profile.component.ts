@@ -2,6 +2,7 @@ import { ProfileService } from './../../services/profile.service';
 import { Component, OnInit } from '@angular/core';
 // iport{map} from 'rxjs/Operator'
 import {HttpClient} from '@angular/common/http'
+import { from } from 'rxjs';
 
 
 
@@ -13,24 +14,26 @@ import {HttpClient} from '@angular/common/http'
 export class ProfileComponent implements OnInit {
 profile : any[];
 repos : any[];
-username : string;
+username : 'amwaniki180';
 
   constructor(private profileservive: ProfileService) { 
   
     }
     findProfile(){
       this.profileservive.updateProfile(this.username);
-      this.profileservive.getProfileInfo().subscribe(profile =>{
+      this.profileservive.getProfileInfo().subscribe(profile => {
         console.log(profile );
         this.profile = profile;
       });
-      this.profileservive.getProfileRepos().subscribe(this.repos =>{
-        console.log(repos );
+      this.profileservive.getProfileRepos().subscribe(repos => {
+        console.log(repos);
+        
         this.repos = repos;
     })
   }
 
   ngOnInit() {
+    this.findProfile();
    
   }
 

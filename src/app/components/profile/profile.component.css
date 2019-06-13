@@ -1,0 +1,40 @@
+.search-form {
+    padding-top: 50px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.body {
+    width: 100%;
+    background-color: rgb(36, 44, 44);
+}
+
+.details-card {
+    background-color: white;
+}
+
+img {
+    width: 100%;
+}
+
+.card {
+    width: 500px;
+    margin: 10px;
+    padding: 20px 10px;
+}
+
+.bio-info {
+    margin-left: 15%;
+}
+
+.image {
+    border-radius: 50%;
+    margin: 30px;
+}
+
+.repos {
+    text-align: center;
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
