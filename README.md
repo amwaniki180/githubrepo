@@ -1,4 +1,4 @@
-# QUOTE APP
+# GITHUB - RRPO
 ### Author: Antony Mwaniki
 This is a program to enable a user to search for their f and also create view repositories. The name  will be highlighted
 ## Getting Started
